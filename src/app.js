@@ -7,7 +7,7 @@ app.use(express.json());
 
 app.get("/", (req, res) => {
   res.json({
-    message: "Student CRUD API - Jenkins CI test"
+    message: "Student CRUD API - Jenkins CI test "
   });
 });
 
