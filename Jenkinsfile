@@ -24,5 +24,17 @@ pipeline {
                 sh 'docker build -t express-crud:jenkins .'
             }
         }
+
+        stage('Deploy') {
+            steps {
+                sh '''
+                    docker rm -f express-crud-app || true
+                    docker run -d \
+                      --name express-crud-app \
+                      -p 3001:3000 \
+                      express-crud:jenkins
+                '''
+            }
+        }
     }
 }
