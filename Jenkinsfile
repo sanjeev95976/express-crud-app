@@ -21,7 +21,7 @@ pipeline {
 
         stage('Docker Build') {
             steps {
-                sh 'docker build -t express-crud:jenkins .'
+                sh 'docker build -t express-crud:jenkins.'
             }
         }
     }
