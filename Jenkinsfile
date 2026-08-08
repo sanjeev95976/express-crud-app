@@ -6,10 +6,9 @@ pipeline {
     }
 
     stages {
+
         stage('Install') {
             steps {
-                sh 'node --version'
-                sh 'npm --version'
                 sh 'npm install'
             }
         }
@@ -17,6 +16,12 @@ pipeline {
         stage('Test') {
             steps {
                 sh 'npm test'
+            }
+        }
+
+        stage('Docker Build') {
+            steps {
+                sh 'docker build -t express-crud:jenkins .'
             }
         }
     }
