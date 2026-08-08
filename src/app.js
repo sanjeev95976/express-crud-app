@@ -13,4 +13,8 @@ app.get("/", (req, res) => {
 
 app.use("/api/students", studentsRouter);
 
+res.json({
+  message: "Student CRUD API - Jenkins CI test"
+});
+
 module.exports = app;
