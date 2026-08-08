@@ -7,14 +7,11 @@ app.use(express.json());
 
 app.get("/", (req, res) => {
   res.json({
-    message: "Student CRUD API is running",
+    message: "Student CRUD API - Jenkins CI test"
   });
 });
 
 app.use("/api/students", studentsRouter);
 
-res.json({
-  message: "Student CRUD API - Jenkins CI test"
-});
 
 module.exports = app;
