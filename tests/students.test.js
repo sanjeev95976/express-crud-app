@@ -5,7 +5,8 @@ const app = require("../src/app");
 const Student = require("../src/models/Student");
 
 beforeAll(async () => {
-  await mongoose.connect("mongodb://localhost:27017/student_db_test");
+//   await mongoose.connect("mongodb://localhost:27017/student_db_test");
+  await mongoose.connect("mongodb://host.docker.internal:27017/student_db_test");
 });
 
 afterEach(async () => {
